@@ -14,44 +14,43 @@ import Navbars from './components/educators/Navbars'
 import Sidebar from './components/educators/Sidebar'
 import Footers from './components/educators/Footers'
 import Home from './pages/student/Home'
-import CourseDetails from './pages/student/CourseDetails'
 import CoursesList from './pages/student/CoursesList'
+import CourseDetails from './pages/student/CourseDetails';
 import Player from './pages/student/Player'
 import AddCourse from './pages/educator/AddCourse'
 import Dashboard from './pages/educator/Dashboard'
 import Educator from './pages/educator/Educator'
 import MyCourses from './pages/educator/MyCourses'
 import Studentsenrolled from './pages/educator/Studentsenrolled'
-import AppContext from './Context/AppContext'
+import Myenrollments from './pages/student/Myenrollments'
+import { Route, Routes } from 'react-router-dom'
+
+
+
 
 const App = () => {
   return (
     <div>
-      Hello world
       <Navbar />
-      <Hero />
-      <CallToAction />
-      <Companies />
-      <Coursecard />
-      <CourseSection />
-      <Loading />
-      <Rating />
-      <Searchbar />
-      <Testimonials />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/course-list' element={<CoursesList />} />
+        <Route path='/course-list/:input' element=
+          {<CoursesList />} />
+        <Route path='/course/:id' element={<CourseDetails />} />
+        <Route path='/my-enrollments' element={<Myenrollments />} />
+        <Route path='/player/:courseId' element={<Player />} />
+        <Route path='/loading/:path' element={<Loading />} />
+        <Route path='/educator' element={< Educator />}>
+
+          <Route path='educator' element={<Dashboard />} />
+          <Route path='add-course' element={<AddCourse />} />
+          <Route path='mycourses' element={<MyCourses />} />
+          <Route path='student-enrolled' element=
+            {<Studentsenrolled />} />
+        </Route>
+      </Routes>
       <Footer />
-      <Navbars />
-      <Sidebar />
-      <Footers />
-      <Home />
-      <CourseDetails />
-      <CoursesList />
-      <Player />
-      <AddCourse />
-      <Dashboard />
-      <Educator />
-      <MyCourses />
-      <Studentsenrolled />
-      <AppContext />
     </div>
   )
 }

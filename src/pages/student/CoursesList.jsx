@@ -3,7 +3,7 @@ import React from 'react'
 const CoursesList = () => {
   return (
     <div>
-      student courses list
+      student courses lists
     </div>
   )
 }

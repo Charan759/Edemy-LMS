@@ -25,12 +25,10 @@ import Studentsenrolled from './pages/educator/Studentsenrolled'
 import Myenrollments from './pages/student/Myenrollments'
 import { Route, Routes } from 'react-router-dom'
 
-
-
-
 const App = () => {
+    
   return (
-    <div>
+    <div className='text-default min-h-screen bg-white'>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -42,8 +40,8 @@ const App = () => {
         <Route path='/player/:courseId' element={<Player />} />
         <Route path='/loading/:path' element={<Loading />} />
         <Route path='/educator' element={< Educator />}>
-
-          <Route path='educator' element={<Dashboard />} />
+          
+          <Route path='Dashboard'index element={<Dashboard />} />
           <Route path='add-course' element={<AddCourse />} />
           <Route path='mycourses' element={<MyCourses />} />
           <Route path='student-enrolled' element=

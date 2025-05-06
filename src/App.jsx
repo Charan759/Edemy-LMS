@@ -23,13 +23,15 @@ import Educator from './pages/educator/Educator'
 import MyCourses from './pages/educator/MyCourses'
 import Studentsenrolled from './pages/educator/Studentsenrolled'
 import Myenrollments from './pages/student/Myenrollments'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useMatch } from 'react-router-dom'
 
 const App = () => {
+
+  const isEducatorRoute = useMatch('/educator/*')
     
   return (
     <div className='text-default min-h-screen bg-white'>
-      <Navbar />
+      {!isEducatorRoute && <Navbar />}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/course-list' element={<CoursesList />} />

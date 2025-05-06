@@ -9,7 +9,15 @@ export default{
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontSize : {
+        'course-details-heading-small' :  ['26px','36px'],  
+        'course-details-heading-small' :  ['26px','36px'],
+        'home-heading-small' :  ['28px', '34px'],
+        'home-heading-large' :  ['48px', '56px'],
+        'default' : ['15px', '21px']
+      }
+    },
   },
   plugins: [],
 }
